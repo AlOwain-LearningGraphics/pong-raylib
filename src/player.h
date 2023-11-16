@@ -7,10 +7,12 @@ enum player_id {
 
 class player {
 public:
-    player(player_id id);
+    player();
 
+    void set(player_id id);
     void draw();
     void logic();
+    void reset();
 private:
     int posY;
     player_id id;

@@ -1,6 +1,6 @@
-#include "ball.h"
 #include <raylib.h>
 #include <cmath>
+#include "ball.h"
 
 // This calculates the cos and the sin in degrees instead of radians.
 float cosd(float x) { return cos(fmod((x),360) * M_PI / 180); }
@@ -37,6 +37,13 @@ void ball::deflect()
     trajectory = 360 - trajectory;
 }
 
+bool ball::inGoal()
+{
+    if (pos.x - size <= 0 || pos.x + size >= GetScreenWidth()) { return true; }
+
+    return false;
+}
+
 void ball::logic()
 {
     //      This calculates the cos & sin of the trajectory which outputs a value between -1 to 1,
@@ -47,11 +54,6 @@ void ball::logic()
     //      This ensures that the ball deflects of the wall.
     if (pos.y - size <= 0 || pos.y + size >= GetScreenHeight()) {
         deflect();
-    }
-  
-    // TODO: Move to game controller
-    if (pos.x - size <= 0 || pos.x + size >= GetScreenWidth()) {
-        reset();
     }
 
     if (speed >= max_speed) {

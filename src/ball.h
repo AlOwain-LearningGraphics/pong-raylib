@@ -13,6 +13,7 @@ public:
     void logic();
     void reset();
     void deflect();
+    bool inGoal();
 private:
     ball_state state;
     Vector2 pos;

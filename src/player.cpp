@@ -1,10 +1,14 @@
 #include "player.h"
 #include <raylib.h>
 
-player::player(player_id id)
+
+player::player() {}
+
+
+void player::set(player_id id)
 {
     this->id = id;
-    posY = GetScreenHeight() / 2;
+    reset();
 }
 
 void player::draw()
@@ -27,4 +31,9 @@ void player::logic()
     }
     if (posY - (size.y / 2) < 0) { posY = size.y / 2; }
     else if (posY + (size.y / 2) > GetScreenHeight()) { posY = GetScreenHeight() - (size.y / 2); }
+}
+
+void player::reset()
+{
+    posY = GetScreenHeight() / 2;
 }
