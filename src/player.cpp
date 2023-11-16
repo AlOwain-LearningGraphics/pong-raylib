@@ -9,8 +9,8 @@ player::player(player_id id)
 
 void player::draw()
 {
-    if (id == PLAYER_ONE) { DrawRectangle(size.x, posY - (size.y / 2), size.x, size.y, WHITE); }
-    if (id == PLAYER_TWO) { DrawRectangle(GetScreenWidth() - (size.x * 2), posY - (size.y / 2), size.x, size.y, WHITE); }
+    if (id == PLAYER_ONE) { DrawRectangle(size.x, posY - (size.y / 2), size.x, size.y, RAYWHITE); }
+    if (id == PLAYER_TWO) { DrawRectangle(GetScreenWidth() - (size.x * 2), posY - (size.y / 2), size.x, size.y, RAYWHITE); }
 }
 
 void player::logic()
