@@ -1,7 +1,13 @@
+#pragma once
 #include "raylib.h"
+#include "player.h"
+#include <cmath>
+#include <iostream>
 
 class ball {
 public:
+    const int size = 5;
+
     ball();
 
     enum ball_state {
@@ -10,18 +16,19 @@ public:
     };
 
     void draw();
-    void logic();
+    void logic(player player_one, player player_two);
     void reset();
-    void deflect();
-    bool inGoal();
+    bool in_goal();
+    Vector2 get_pos();
 private:
     ball_state state;
     Vector2 pos;
     int trajectory;
-    int speed;
-    const int size = 5;
-    const int max_speed = 10;
-    const int initial_speed = 2;
+    float speed;
+    const float max_speed = 10;
+    const float initial_speed = 3;
     
     void start();
+    void check_for_wall_deflect();
+    void check_for_player_deflect(player player_one, player player_two);
 };

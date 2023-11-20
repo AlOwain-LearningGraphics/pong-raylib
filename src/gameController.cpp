@@ -1,6 +1,5 @@
 #include "gameController.h"
 
-
 gameController::gameController() { set(); }
 
 void gameController::set()
@@ -19,15 +18,15 @@ void gameController::draw()
 
 void gameController::logic()
 {
-    if (game_ball.inGoal())
+    if (game_ball.in_goal())
     {
         score++;
         game_ball.reset();
         player_one.reset();
         player_two.reset();
     }
-
-    game_ball.logic();
+    
+    game_ball.logic(player_one, player_two);
     player_one.logic();
     player_two.logic();
 }

@@ -1,9 +1,6 @@
 #include "player.h"
-#include <raylib.h>
-
 
 player::player() {}
-
 
 void player::set(player_id id)
 {
@@ -36,4 +33,9 @@ void player::logic()
 void player::reset()
 {
     posY = GetScreenHeight() / 2;
+}
+
+int player::get_pos()
+{
+    return posY;
 }

@@ -1,5 +1,6 @@
-#include "player.cpp"
-#include "ball.cpp"
+#pragma once
+#include "ball.h"
+#include "player.h"
 
 class gameController {
 public:

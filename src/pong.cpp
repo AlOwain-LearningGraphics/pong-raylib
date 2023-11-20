@@ -1,9 +1,9 @@
 #include "raylib.h"
-#include "gameController.cpp"
+#include "gameController.h"
 
 int main(int argc, char* argv[])
 {
-    InitWindow(800, 600, "example");
+    InitWindow(800, 600, "Pong - Made in RayLib");
     SetTargetFPS(60);
     
     gameController game;
